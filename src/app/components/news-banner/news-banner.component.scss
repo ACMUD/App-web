@@ -45,6 +45,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  display: flex;
 }
 
 .new-cover {
@@ -52,9 +53,16 @@
 }
 
 .new-content {
-  background: blueviolet;
+  background: white;
 }
 
 .new-cover:hover {
   opacity: 0;
+}
+
+.label {
+  background: linear-gradient(180deg, rgba(2,0,36,0) 0%, rgba(0,0,0,0.4206057422969187) 18%, rgba(0,0,0,0.7847514005602241) 63%);
+  height: 40%;
+  width: 100%;
+  align-self: flex-end;
 }
