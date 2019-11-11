@@ -20,7 +20,6 @@
 
   width: 75%;
   height: 90%;
-  background: white;
 }
 
 .secondary-news {
@@ -31,16 +30,31 @@
   width: 50%;
 }
 
-.new {
-  background: crimson;
+.new-item {
   width: 50%;
   padding: 5px;
 }
 
-.test {
-  background: darkblue;
+.new-info {
   width: 100%;
   height: 100%;
+  position: relative;
 }
 
+.new-cover, .new-content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 
+.new-cover {
+  background: blue;
+}
+
+.new-content {
+  background: blueviolet;
+}
+
+.new-cover:hover {
+  opacity: 0;
+}

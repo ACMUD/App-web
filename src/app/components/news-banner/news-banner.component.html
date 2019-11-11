@@ -1,12 +1,18 @@
 <div class="news-container">
   <div class="news-grid">
-    <div class="new">
-      <div class="test"></div>
+    <div class="new-item">
+      <div class="new-info">
+        <div class="new-content"></div>
+        <div class="new-cover"></div>
+      </div>
     </div>
 
     <div class="secondary-news">
-      <div class="new" *ngFor="let new of news.slice(1,5)">
-        <div class="test"></div>
+      <div class="new-item" *ngFor="let new of news.slice(1,5)">
+        <div class="new-info">
+          <div class="new-content"></div>
+          <div class="new-cover"></div>
+        </div>
       </div>
     </div>
   </div>
