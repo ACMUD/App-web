@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosJsonService } from '../../services/datos-json.service';
 
 @Component({
   selector: 'app-grupos-de-interes',
