@@ -19,7 +19,7 @@ import { AgmCoreModule } from '@agm/core';
 import { TopnewsService } from './services/topnews.service';
 
 
-// import de componentes 
+// import de componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -32,6 +32,7 @@ import { NewsComponent } from './pages/news/news.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { EventosComponent } from './pages/eventos/eventos.component';
 import { GruposDeInteresComponent } from './pages/grupos-de-interes/grupos-de-interes.component';
+import { GrupoTarjetaComponent } from './pages/grupos-de-interes/grupo-tarjeta/grupo-tarjeta.component';
 import { TopnewsTarjetaComponent } from './pages/home/topnews/topnews-tarjeta/topnews-tarjeta.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoticiaComponent } from './components/noticia/noticia.component';
@@ -52,6 +53,7 @@ import { IntegrantesComponent } from './pages/integrantes/integrantes.component'
     QuienesSomosComponent,
     EventosComponent,
     GruposDeInteresComponent,
+    GrupoTarjetaComponent,
     TopnewsTarjetaComponent,
     NoticiaComponent,
     EventoComponent,

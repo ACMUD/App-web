@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-grupo-tarjeta',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./grupo-tarjeta.component.scss']
 })
 export class GrupoTarjetaComponent implements OnInit {
+  @Input() grupos: {};
 
   constructor() { }
 

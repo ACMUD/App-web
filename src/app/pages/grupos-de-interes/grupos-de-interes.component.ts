@@ -8,9 +8,20 @@ import { DatosJsonService } from '../../services/datos-json.service';
 })
 export class GruposDeInteresComponent implements OnInit {
 
-  constructor() { }
+  grupos: any = {};
+
+
+  constructor(private DatosRequest: DatosJsonService) { }
 
   ngOnInit() {
+    this.DatosRequest.get('grupos_interes').subscribe( dato => {
+      // console.log(dato);
+      this.grupos = dato;
+      console.info(this.grupos)
+    }, (error_service) => {
+      console.log(error_service);
+    });
   }
 
 }
+
