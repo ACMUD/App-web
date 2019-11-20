@@ -8,7 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NewsBannerComponent implements OnInit {
   @Input() news: any;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
