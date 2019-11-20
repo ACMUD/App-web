@@ -16,7 +16,7 @@ export class NewsComponent implements OnInit {
     this.news_data.get('noticias').subscribe(
       datos => {
         this.news = datos;
-        console.log(this.news)
+        // console.log(this.news)
       }, (error_service) => {
         console.log(error_service);
       }
