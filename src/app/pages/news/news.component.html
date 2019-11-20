@@ -1,1 +1,3 @@
 <app-news-banner [news]="['hi',' how', 'are', 'you', 'cat']"></app-news-banner>
+<!-- <app-news-banner [news]="news"></app-news-banner> -->
+<app-news-card [news]="news" *ngFor="let news of news"></app-news-card>
