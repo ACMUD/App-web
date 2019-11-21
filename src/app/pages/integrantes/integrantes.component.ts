@@ -13,6 +13,7 @@ export class IntegrantesComponent implements OnInit {
   constructor(private DatosRequest: DatosJsonService) { }
 
   ngOnInit() {
+    
     this.DatosRequest.get('miembros').subscribe( dato => {
       // console.log(dato);
       this.integrantes = dato;

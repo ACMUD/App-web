@@ -1,14 +1,18 @@
 <div class="container">
     <div class="card-columns">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;" *ngFor="let integrante of integrantes; index as i">
             <img src="/assets/img/testFondo.jpg" class="card-img-top img-fluid" alt="img Fondo">
             <div class="text-center">
                 <img src="/assets/img/testPersona.jpg" alt="img Persona" class="img-fluid personaImg rounded-circle" height="100px" width="100px">
             </div>
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title">{{integrante.name}} {{integrante.lastName}}</h5>
+                <p class="card-text">Edad: {{integrante.age}}</p>
+                <p class="card-text">Nivel academico: {{integrante.infoStudent.levelDegree}}</p>
+                <p class="card-text">Carrera: {{integrante.infoStudent.universityDegree}}</p>
+                <p class="card-text">Cargo en ACM: {{integrante.infoACM.occupation}}</p>
+                <p class="card-text">Años en ACM: {{integrante.infoACM.yearsInGroup}}</p>
+                <a class="btn btn-primary">SIN USO</a>
             </div>
         </div>
     </div>
