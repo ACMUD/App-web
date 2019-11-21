@@ -7,12 +7,16 @@
             </div>
                 <div class="card-body">
                 <h5 class="card-title">{{integrante.name}} {{integrante.lastName}}</h5>
-                <p class="card-text">Edad: {{integrante.age}}</p>
-                <p class="card-text">Nivel academico: {{integrante.infoStudent.levelDegree}}</p>
-                <p class="card-text">Carrera: {{integrante.infoStudent.universityDegree}}</p>
+
+
+                <p class="card-text" *ngIf="integrante.infoStudent.levelDegree == 'Pregrado'; else egresado">{{integrante.infoStudent.universityDegree}} Student</p>
+                <ng-template #egresado>
+                        <p class="card-text">{{integrante.infoStudent.universityDegree}}</p>
+                </ng-template>
                 <p class="card-text">Cargo en ACM: {{integrante.infoACM.occupation}}</p>
                 <p class="card-text">Años en ACM: {{integrante.infoACM.yearsInGroup}}</p>
-                <a class="btn btn-primary">SIN USO</a>
+
+                <a class="btn btn-primary">Mas informacion (SIN USO)</a>
             </div>
         </div>
     </div>
