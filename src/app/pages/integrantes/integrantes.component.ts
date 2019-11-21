@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosJsonService } from '../../services/datos-json.service';
 
 @Component({
   selector: 'app-integrantes',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IntegrantesComponent implements OnInit {
 
-  constructor() { }
+  integrantes: any;
+
+  constructor(private DatosRequest: DatosJsonService) { }
 
   ngOnInit() {
+    this.DatosRequest.get('miembros').subscribe( dato => {
+      // console.log(dato);
+      this.integrantes = dato;
+      console.info(this.integrantes)
+    }, (error_service) => {
+      console.log(error_service);
+    });
   }
 
 }
