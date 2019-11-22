@@ -8,6 +8,7 @@ import { EventosComponent } from './pages/eventos/eventos.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { EventoComponent } from './components/evento/evento.component';
 import { NoticiaComponent } from './components/noticia/noticia.component';
+import { IntegrantesComponent } from './pages/integrantes/integrantes.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'Proyectos', component: ProyectosComponent },
   { path: 'Eventos', component: EventosComponent },
   { path: 'Quienes_somos', component: QuienesSomosComponent },
+  { path: 'Integrantes', component: IntegrantesComponent },
   { path: 'evento/:id', component: EventoComponent },
   { path: 'noticia/:id', component: NoticiaComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },

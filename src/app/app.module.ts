@@ -37,6 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoticiaComponent } from './components/noticia/noticia.component';
 import { EventoComponent } from './components/evento/evento.component';
 import { ProyectosComponent } from './pages/proyectos/proyectos.component';
+import { IntegrantesComponent } from './pages/integrantes/integrantes.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { ProyectosComponent } from './pages/proyectos/proyectos.component';
     TopnewsTarjetaComponent,
     NoticiaComponent,
     EventoComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    IntegrantesComponent
   ],
   imports: [
     BrowserModule,
