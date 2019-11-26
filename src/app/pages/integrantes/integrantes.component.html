@@ -1,1 +1,42 @@
-<p>integrantes works!</p>
+<div class="container">
+    <div class="card-columns">
+        <div *ngFor="let integrante of integrantes">
+            <div class="card" style="width: 18rem;">
+                <div class="card-flip">
+                    <div class="flip">
+                        <div class="front">
+                            <!-- inicio de front -->
+                            <img src="https://www.acm.org/binaries/content/gallery/acm/ctas/acm-sym-branded.jpg/acm-sym-branded.jpg/acm%3Adesktopcta"
+                                class="card-img-top img-fluid" alt="img Fondo">
+                            <div class="text-center">
+                                <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{integrante.img}}"
+                                    alt="img Persona" class="personaImg rounded-circle" height="100px" width="100px">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{integrante.name}} {{integrante.lastName}}</h5>
+                                <p class="card-text"
+                                    *ngIf="integrante.infoStudent.levelDegree == 'Pregrado'; else egresado">
+                                    {{integrante.infoStudent.universityDegree}} Student</p>
+                                <ng-template #egresado>
+                                    <p class="card-text">{{integrante.infoStudent.universityDegree}}</p>
+                                </ng-template>
+                                <p class="card-text">Cargo en ACM: {{integrante.infoACM.occupation}}</p>
+                                <p class="card-text">Años en ACM: {{integrante.infoACM.yearsInGroup}}</p>
+                            </div>
+                            <!-- fin front -->
+                        </div>
+                        <div class="back">
+                            <!-- inicio back -->      
+                            <div class="card-body backCard" >
+                                <p class="card-text">Edad: {{integrante.age}} años</p>
+                                <p class="card-text">{{integrante.description}}</p>
+                                <span class="badge badge-primary" *ngFor="let lenguaje of integrante.programmingLanguages">{{lenguaje}}</span>
+                            </div>                  
+                            <!-- fin back  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
