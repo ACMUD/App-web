@@ -1,13 +1,7 @@
 <div class="card-columns">
-  <div class="row ">
+  <div class="row d-flex align-items-center">
     <h3 class="pb-2">Grupos de Interes</h3>
-    <div   *ngFor="let grupos of grupos;">
-
-
-
-
-        <app-grupo-tarjeta [grupos]="grupos"  ></app-grupo-tarjeta>
-      </div>
+        <app-grupo-tarjeta  *ngFor="let grupos of grupos;" [grupos]="grupos"  ></app-grupo-tarjeta>
     </div>
   </div>
 
