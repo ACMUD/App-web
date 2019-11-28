@@ -8,7 +8,7 @@
                 </a>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ news['title'] }}</h5>
+                <h5 class="card-title"><strong>{{ news['title'] }}</strong></h5>
                 <p class="card-text">{{ news['content']['sections'][0]['paragraphs'][0]['text'] | slice:0:250 }}...</p>
                 <a mdbBtn color="indigo" mdbWavesEffect>Leer mas</a>
             </div>
