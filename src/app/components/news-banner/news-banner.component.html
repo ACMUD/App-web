@@ -1,0 +1,46 @@
+<div class="news-container">
+  <div class="news-grid">
+    <div class="new-item">
+      <a href="{{ news[0]['source'] }}">
+        <div class="new-info">
+          <div class="new-content">
+            <h2>{{ news[0]['title'] }}</h2>
+            <small> {{ news[0]['date'] }} | {{ news[0]['author'] }}</small>
+            <br>
+            <p>
+              {{ news[0]['content']['sections'][0]['paragraphs'][0]['text'] }}..
+            </p>
+          </div>
+          <div class="new-cover" [ngStyle]="{'background-image':'url(' + news[0]['cover-image']['route'] + ')'}">
+            <div class="label">
+              <h2>{{ news[0]['title'] }}</h2>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="secondary-news">
+      <div class="new-item" *ngFor="let new of FiveNews">
+        <a href="{{ new['source'] }}">
+          <div class="new-info">
+            <div class="new-content">
+              <h6>{{ new['title'] }}</h6>
+              <small style="font-size: smaller;">
+                {{ new['date'] }} | {{ new['author'] }}</small>
+              <br>
+              <p style="font-size: small;">
+                {{ new['content']['sections'][0]['paragraphs'][0]['text'] | slice:0:200 }}...
+              </p>
+            </div>
+            <div class="new-cover" [ngStyle]="{'background-image':'url(' + new['cover-image']['route'] + ')'}">
+              <div class="label">
+                <h6>{{ new['title'] }}</h6>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
