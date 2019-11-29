@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosJsonService } from '../../services/datos-json.service';
 
 @Component({
   selector: 'app-news',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
+  news: any;
 
-  constructor() { }
+  constructor(private news_data: DatosJsonService) { }
 
   ngOnInit() {
+    this.news_data.get('noticias').subscribe(
+      datos => {
+        this.news = datos;
+      },
+      error_service => {
+        console.log(error_service);
+      }
+    );
   }
-
 }
