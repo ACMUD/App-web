@@ -15,6 +15,6 @@ export class TopnewsTarjetaComponent implements OnInit {
   }
 
   action(){
-    console.log("click");
+    console.log('click');
   }
 }
