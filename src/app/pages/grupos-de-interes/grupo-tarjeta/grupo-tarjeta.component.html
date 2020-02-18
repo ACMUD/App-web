@@ -1,0 +1,28 @@
+<div>
+<div  class="col ">
+<div class="card ">
+  <div class="row">
+    <div  *ngIf="grupos.posicion == 'derecha'" class="col-md-4">
+      <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{grupos.logo}}" class="card-img" alt="imgGrupo" height="200px" width="200px">
+
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{grupos.Abreviacion}}</h5>
+        <p class="card-text">{{grupos.Descripcion}}</p>
+        <p>Proyectos realizados:</p>
+        <li>
+        <div>
+          <ol>{{grupos.ProyectosRealizados[0]}}</ol>
+        </div>
+        </li>
+        <button type="button" class="btn btn-primary">Ver más</button>
+      </div>
+    </div>
+    <div  *ngIf="grupos.posicion == 'izquierda'" class="col-md-4">
+      <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{grupos.logo}}" class="card-img" alt="imgGrupo" height="200px" width="200px">
+    </div>
+  </div>
+</div>
+</div>
+</div>
