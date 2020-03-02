@@ -1,14 +1,17 @@
-<div class="card">
-    <div class="view view-cascade overlay waves-light zoom" mdbWavesEffect>
-        <img class="card-img-top img-fluid" src="{{ topnews.img }}" alt="Card image cap">  
-        <a>
-            <div class="mask rgba-white-slight"></div>
-        </a>
-    </div>
-    <div class="card-body">
-        <h5 class="card-title">{{ topnews.titulo }}</h5>
-        <p class="card-text">{{ topnews.descripcion }}</p>
-        <a mdbBtn  color="primary" mdbWavesEffect (click)="action()" >Leer mas</a>
-        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+<div class="row justify-content-around m-lg-5">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-3" *ngFor="let news of news">
+        <div class="card h-100">
+            <div class="view view-cascade overlay waves-light zoom" mdbWavesEffect>
+                <img class="card-img-top img-fluid" src="{{ news['cover-image']['route'] }}" alt="{{ news['title'] }}">
+                <a>
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><strong>{{ news['title'] }}</strong></h5>
+                <p class="card-text">{{ news['content']['sections'][0]['paragraphs'][0]['text'] | slice:0:250 }}...</p>
+                <a mdbBtn color="indigo" mdbWavesEffect>Leer mas</a>
+            </div>
+        </div>
     </div>
 </div>

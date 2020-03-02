@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Topnews_card, TopnewsService } from '../../../services/topnews.service';
+import { DatosJsonService } from '../../../services/datos-json.service';
+// import { Topnews_card } from '../../../services/topnews.service';
 
 @Component({
   selector: 'app-topnews',
@@ -7,12 +8,28 @@ import { Topnews_card, TopnewsService } from '../../../services/topnews.service'
   styleUrls: ['./topnews.component.scss']
 })
 export class TopnewsComponent implements OnInit {
-  topnews: Topnews_card[] = [];
+  news: any;
 
-  constructor( private topnewsService: TopnewsService ) { }
+  // topnews: Topnews_card[] = [];
 
-  ngOnInit() {
-    this.topnews = this.topnewsService.getTopnews();
-  }
+  constructor(
+    // private topnewsService: TopnewsService
+    private newsData: DatosJsonService
+     ) { }
+
+     ngOnInit() {
+      this.newsData.get('noticias').subscribe(
+        datos => {
+           let ArrayDado = [];
+           for (let i = 0; i < 3; i++) {
+           ArrayDado.push(datos[i]);
+           }
+          this.news = ArrayDado;
+        },
+        error_service => {
+          console.log(error_service);
+        }
+      );
+    }
 
 }
