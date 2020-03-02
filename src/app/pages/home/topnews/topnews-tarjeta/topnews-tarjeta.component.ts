@@ -7,7 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TopnewsTarjetaComponent implements OnInit {
 
-  @Input() topnews: any = {};
+  // @Input() topnews: any = {};
+  @Input() news: any;
+
 
   constructor( ) { }
 
