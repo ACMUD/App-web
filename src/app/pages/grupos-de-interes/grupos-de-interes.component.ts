@@ -18,11 +18,11 @@ export class GruposDeInteresComponent implements OnInit {
       console.log(dato);
       //dato.values=[JSON.parse('"name": "test"')];
       this.grupos = dato;
-      for(var i =0; i<this.grupos.length; i++){
-          if(i%2==0){
-            this.grupos[i].posicion="derecha";
+      for(var i = 0; i < this.grupos.length; i++){
+          if(i % 2 === 0){
+            this.grupos[i].posicion = 'derecha';
           }else{
-            this.grupos[i].posicion="izquierda";
+            this.grupos[i].posicion = 'derecha';
           }
 
       }

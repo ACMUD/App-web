@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DatosJsonService } from '../../services/datos-json.service';
+// import { MiembrosModel } from '../../models/miembros.models';
+import { InfoACModel } from '../../models/info_acm.models';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-quienes-somos',
@@ -7,9 +11,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuienesSomosComponent implements OnInit {
 
-  constructor() { }
+  bandera = false;
+  // miembros: MiembrosModel = new MiembrosModel();
+  info_acm: InfoACModel = new InfoACModel();
+
+  fotos = [
+    {
+      "name": "GiGame",
+      "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/GIGAME.png?raw=true"
+    },
+    {
+      "name": "GiSac",
+      "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/GISAC.png?raw=true"
+    },
+    {
+      "name": "GiWeb",
+      "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/GIWEB.png?raw=true"
+    },
+    {
+      "name": "Gump",
+      "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/GUMP.jpg?raw=true"
+    },
+    {
+      "name": "PyGroup",
+      "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/PYGROUP.png?raw=true"
+    },
+  ];
+  constructor(
+    private datosJson: DatosJsonService,
+    private router: Router,
+    ) { }
 
   ngOnInit() {
+    // this.datosJson.get('miembros').subscribe(
+    //   (datos: MiembrosModel) => this.miembros = datos );
+
+    this.datosJson.get('Info_acm').subscribe(
+      (datos: InfoACModel) => {this.info_acm = datos; console.log(datos); });
+    }
+
+  navegar() {
+    this.router.navigate( ['/integrantes'] );
   }
 
 }
