@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosJsonService } from '../../services/datos-json.service';
-import { MiembrosModel } from '../../models/miembros.models';
+// import { MiembrosModel } from '../../models/miembros.models';
 import { InfoACModel } from '../../models/info_acm.models';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-quienes-somos',
@@ -11,7 +12,7 @@ import { InfoACModel } from '../../models/info_acm.models';
 export class QuienesSomosComponent implements OnInit {
 
   bandera = false;
-  miembros: MiembrosModel = new MiembrosModel();
+  // miembros: MiembrosModel = new MiembrosModel();
   info_acm: InfoACModel = new InfoACModel();
 
   fotos = [
@@ -36,14 +37,21 @@ export class QuienesSomosComponent implements OnInit {
       "url": "https://github.com/ACMUD/Datos_json/blob/master/App_web/imgGrupos/PYGROUP.png?raw=true"
     },
   ];
-  constructor(private _datosJson: DatosJsonService) { }
+  constructor(
+    private datosJson: DatosJsonService,
+    private router: Router,
+    ) { }
 
   ngOnInit() {
-    this._datosJson.get('miembros').subscribe(
-      (datos : MiembrosModel) => this.miembros = datos );
+    // this.datosJson.get('miembros').subscribe(
+    //   (datos: MiembrosModel) => this.miembros = datos );
 
-    this._datosJson.get('Info_acm').subscribe(
-      (datos : InfoACModel) => {this.info_acm = datos; console.log(datos)});
+    this.datosJson.get('Info_acm').subscribe(
+      (datos: InfoACModel) => {this.info_acm = datos; console.log(datos); });
     }
+
+  navegar() {
+    this.router.navigate( ['/integrantes'] );
+  }
 
 }
