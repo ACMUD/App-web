@@ -15,12 +15,12 @@ import { IntegrantesComponent } from './pages/integrantes/integrantes.component'
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'News', component: NewsComponent },
-  { path: 'Grupos', component: GruposDeInteresComponent },
-  { path: 'Proyectos', component: ProyectosComponent },
-  { path: 'Eventos', component: EventosComponent },
-  { path: 'Quienes_somos', component: QuienesSomosComponent },
-  { path: 'Integrantes', component: IntegrantesComponent },
+  { path: 'news', component: NewsComponent },
+  { path: 'grupos', component: GruposDeInteresComponent },
+  { path: 'proyectos', component: ProyectosComponent },
+  { path: 'eventos', component: EventosComponent },
+  { path: 'quienes_somos', component: QuienesSomosComponent },
+  { path: 'integrantes', component: IntegrantesComponent },
   { path: 'evento/:id', component: EventoComponent },
   { path: 'noticia/:id', component: NoticiaComponent },
   { path: '', pathMatch: 'full', redirectTo: 'home' },
