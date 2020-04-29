@@ -13,4 +13,8 @@ export class GrupoTarjetaComponent implements OnInit {
   ngOnInit() {
   }
 
+  redireccion(url: any) {
+    window.open(url, '_blank')
+  }
+
 }
