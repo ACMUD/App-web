@@ -1,54 +1,55 @@
-<div  class="">
-<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-12">
-  <div class="card h-100">
-    <div class="row">
-      <div  class="col-md-4 ">
-        <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{grupos['logo']}}" class="card-img fluid rounded mx-auto d-block" alt="imgGrupo" style="width: 70%; padding-top: 1rem;">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">{{grupos['Abreviacion']}}</h5>
-          <p class="card-text">{{grupos['Descripcion']}}</p>
-
-
-          <div *ngIf="grupos['TemasTrabajados'].length > 0">
-            <p>Temas:</p>
-            <ul class="">
-              <li *ngFor="let tema of grupos['TemasTrabajados']">
-                <strong>{{ tema['nombre']  }}</strong>  <br>  {{ tema['descripcion']  }}
-              </li>
-            </ul>
-          </div>
-
-
-          <div *ngIf="grupos['ProyectosRealizados'].length > 0">
-            <p>Proyectos realizados:</p>
-            <ul class="">
-              <li *ngFor="let grupo of grupos['ProyectosRealizados']">
-                {{ grupo['nombre']  }} <br>  {{ grupo['descripcion']  }}
-              </li>
-            </ul>
-          </div>
-
-          <div *ngIf="grupos['Prerrequisitos'].length > 0">
-            <p>Prerequisitos:</p>
-            <ul class="">
-              <li *ngFor="let pre of grupos['Prerrequisitos']">
-                {{ pre }}
-              </li>
-            </ul>
-          </div>
-          
-            <!-- <ol>{{grupos['ProyectosRealizados'][0]}}</ol> -->
-   
-          <button  (click)="redireccion(grupos['link'])" class="btn btn-primary">Inscribirse</button>
+<div class="">
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-12">
+    <div class="card h-100">
+      <div class="row">
+        <div class="col-md-4 ">
+          <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{grupos['logo']}}"
+            class="card-img fluid rounded mx-auto d-block" alt="imgGrupo" style="width: 70%; padding-top: 1rem;">
         </div>
-      </div>
-      <!-- <div  *ngIf="grupos.posicion == 'izquierda'" class="col-md-4">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{grupos['Abreviacion']}}</h5>
+            <p class="card-text">{{grupos['Descripcion']}}</p>
+
+
+            <div [hidden]="grupos['TemasTrabajados'].length <= 0">
+              <p>Temas:</p>
+              <ul class="">
+                <li *ngFor="let tema of grupos['TemasTrabajados']">
+                  <strong>{{ tema['nombre']  }}</strong> <br> {{ tema['descripcion']  }}
+                </li>
+              </ul>
+            </div>
+
+
+            <div [hidden]="grupos['ProyectosRealizados'].length <= 0">
+              <p>Proyectos realizados:</p>
+              <ul class="">
+                <li *ngFor="let grupo of grupos['ProyectosRealizados']">
+                  {{ grupo['nombre']  }} <br> {{ grupo['descripcion']  }}
+                </li>
+              </ul>
+            </div>
+
+            <div [hidden]="grupos['Prerrequisitos'].length <= 0">
+              <p>Prerequisitos:</p>
+              <ul class="">
+                <li *ngFor="let pre of grupos['Prerrequisitos']">
+                  {{ pre }}
+                </li>
+              </ul>
+            </div>
+
+            <!-- <ol>{{grupos['ProyectosRealizados'][0]}}</ol> -->
+
+            <button (click)="redireccion(grupos['link'])" class="btn btn-primary">Inscribirse</button>
+          </div>
+        </div>
+        <!-- <div  [hidden]="grupos.posicion !== 'izquierda'" class="col-md-4">
         <img src="https://raw.githubusercontent.com/ACMUD/Datos_json/master/App_web/{{grupos.logo}}" class="card-img" alt="imgGrupo" height="200px" width="200px">
       </div> -->
+      </div>
+
     </div>
-    
   </div>
-</div>
 </div>
